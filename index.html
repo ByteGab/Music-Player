@@ -22,18 +22,36 @@
                <h1>Doble Check</h1>
                <p>C.Tangana</p>
 
-               <audio controls> 
+               <audio controls id="song"> 
                 <source src="media/Yt1scom - CTangana  Doble Check INEDITO DE IDOLO.mp3" type="audio/mpeg">
                </audio>
                <input type="range" value="0" id="progress">
 
-               <div class="control">
+               <div class="controls">
                 <div><i class="fa-solid fa-backward"></i></div>
-                <div><i class="fa-solid fa-play"></i></div>
+                <div onclick="playPause()"><i class="fa-solid fa-play" id="ctrlIcon"></i></div>
                 <div><i class="fa-solid fa-forward"></i></div>
                </div>
 
         </div>
     </div>
+
+    <script>
+
+        let progress = document.getElementById("progress");
+        let song = document.getElementById("progress");
+        let ctrlIcon = document.getElementById("progress");
+
+
+        song.onloadedmetadata = function(){
+            progress.max = song.duration;
+            progress.value = song.currentTime;
+        }
+
+        function playPause(){
+            
+        }
+    </script>
+
 </body>
 </html>
